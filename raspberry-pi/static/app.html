@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Music Playing Thing</title>
+	<script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+	<script src="/static/app.js"></script>
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+	<link rel="stylesheet" href="/static/app.css">
+	<style>
+	</style>
+</head>
+<body>
+<div class="controls">
+	<div class="progress">
+		<span class="currentTime">0:00
+		</span>
+		<div class="bar">
+			<div></div>
+			<input type="range" min="0" max="100" value="100" step="0.3" class="slider" id="myRange">
+		</div>
+		<span class="endTime">0:00
+		</span>		
+	</div>
+	<div class="avr">
+		<i class="material-icons">power_settings_new</i>
+	</div>
+	<div class="volume">
+		<i class="material-icons">volume_up</i>
+		<div class="bar"></div>
+		<input type="range" min="0" max="100" value="100" step="1" class="slider">
+	</div>
+	<div class="playingNow">
+		<i class="material-icons">pause</i>
+		<span>Currently Playing</span>
+		<div></div>
+	</div>
+	<div class="playingNext">
+		<i class="material-icons">skip_next</i>
+		<span>Up Next</span>
+		<div></div>
+	</div>
+
+</div>
+
+	
+<div class="playlistCont">
+	<div class="header">
+		<h2>Playlists</h2>
+		<input type="text" placeholder="Playlist ID / YouTube URL" name="addPlaylist" id="addPlaylist">
+		<i class="material-icons inputSubmit">playlist_add</i>
+	</div>
+	<div class="scrollbox">
+		<div class="playlist">
+			<div class="thumb"><span>5 items</span></div>
+			<div class="title">sakjdhsadasdsad</div>
+			<div class="descri">saskljdsajdsajdhsaljdsajdkjashdkjsahdksahdjasdsadhjsasc sajbd  djc j jd kld dn  kl ksd sldn k;msak lkamssd mls kldsnsc s ds ;ksd lksd</div>
+		</div>
+	</div>
+</div>
+
+<div class="searchCont">
+	<div class="header">
+		<h2>Search</h2>
+		<input type="text" placeholder="Search" name="searchSongs" id="searchSongs">
+		<i class="material-icons shortfield inputSubmit">search</i>
+		<i class="material-icons radio">radio</i>
+	</div>
+	<div class="scrollbox">
+		<div class="placeholder">
+			Search YouTube for Music
+		</div>
+	</div>
+</div>
+</body>
+</html>

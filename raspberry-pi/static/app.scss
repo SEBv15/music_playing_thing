@@ -1,0 +1,327 @@
+// #rot-rot-gruen-gruen-blau-blau
+$red: #aa0033;
+$lightblue: #d9f0ff;
+$white: #fffffc;
+$darkerlightblue: #a3d5ff;
+$evendarkerlightblue: #83c9f4;
+
+body {
+	margin: 0px;
+	background-color: $white;
+	font-family: 'Open Sans', Roboto, Arial;
+	overflow: hidden;
+}
+
+div.controls {
+	position: fixed;
+	bottom: 0px;
+	left: 0px;
+	height: 128px;
+	background-color: $red;
+	width: 100vw;
+	color: $white;
+	
+	div.progress {
+		height: 32px;
+		width: 100vw;
+		
+		span.currentTime, span.endTime {
+			font-weight: bold;
+			float: left;
+			line-height: 32px;
+			display: inline-block;
+			width: 100px;
+			text-align: center;
+		}
+		span.endTime {
+			font-weight: bold;
+		}
+		
+		div.bar {
+			float: left;
+			height: 6px;
+			border-radius: 6px;
+			background-color: rgba($white,0.4);
+			width: calc(100vw - 100px * 2);
+			margin-top: 13px;
+			position: relative;
+			
+			div {
+				height: 6px;
+				background-color: $white;
+				border-radius: 6px;
+				width: 100%;
+			}
+			input {
+				position: absolute;
+				top: 0;
+				left: 0;
+			}
+		}
+	}
+	
+	div.avr {
+		float: left;
+		width: 48px;
+		height: 48px;
+		margin-left: 24px;
+		margin-top: 24px;
+		text-align: center;
+		cursor: pointer;
+		
+		&.off {
+			color: rgba(#fff,0.5);
+		}
+		
+		i {
+			font-size: 24px;
+			line-height: 48px;
+		}
+		
+		&:hover {
+			background-color: rgba(0,0,0,0.1)
+		}
+	}
+	
+	div.volume {
+		float: left;
+		height: 96px;
+		width: 96px;
+		margin-left: -24px;
+		margin-right: -16px;
+		//background-color: green;
+		position: relative;
+		transform: rotate(-90deg);
+		
+		div.bar {
+			margin-top: 96px / 2 - 3px;
+			height: 6px;
+			background-color: $white;
+			float: left;
+			width: 54px;
+			border-radius: 10px;
+		}
+		i {
+			margin-top: 96px / 2 - 3px;
+			float: left;
+			width: 26px;
+			margin-left: 12px;
+			line-height: 6px;
+			transform: rotate(90deg);
+		}
+		input {
+			width: 54px;
+			position: absolute;
+			top: 96px / 2 - 2.5px;
+			left: 39px;
+		}
+	}
+	
+	div.playingNow, div.playingNext {
+		height: 44px;
+		float: left;
+		width: calc(100vw - 96px * 1.5);
+		position: relative;
+		
+		i {
+			float: left;
+			width: 48px;
+			height: 44px;
+			line-height: 44px;
+			text-align: center;
+		}
+		span {
+			float: left;
+			line-height: 44px;
+			height: 44px;
+			width: calc(100% - 48px * 2.5);
+			overflow: hidden;
+			text-overflow: ellipsis;
+			padding-left: 24px;
+		}
+		div {
+			position: absolute;
+			top: 0px;
+			left: 0px;
+			height: 44px;
+			background-color: rgba(#000,0.1);
+			width: 0%;
+			transition: width 0.1s;
+		}
+	}
+	div.playingNow:hover div {
+		width: calc(100% - 48px);
+	}
+	div.playingNext:hover div {
+		width: calc(100% - 48px);
+	}
+}
+
+div.playlistCont, div.searchCont {
+	width: calc(57vw - 4px);
+	float: left;
+	height: calc(100vh - 128px);
+	
+	div.header {
+		width: 100%;
+		height: 48px;
+		background-color: $red;
+		color: $white;
+		position: relative;
+		
+		h2 {
+			width: unset;
+			margin: 0 16px 0 16px;
+			font-size: 18px;
+			line-height: 48px;
+			float: left;
+		}
+		input {
+			float: left;
+			background-color: rgba($white,1);
+			border-radius: 3px;
+			border: 0px;
+			height: 32px;
+			margin-top: 7px;
+			color: black;
+			padding: 0 8px;
+			width: calc(100% - 138px);
+			outline: none;
+		}
+		i {
+			position: absolute;
+			right: 20px;
+			top: 12px;
+			cursor: pointer;
+			color: #777;
+		}
+		i.shortfield {
+			right: 68px;
+		}
+		i.radio {
+			color: #fff;
+		}
+	}
+	
+	div.playlistHeader {
+		background-color: $red;
+		width: calc(50vw - 64px);
+		height: 32px;
+		color: white;
+		cursor: pointer;
+		z-index: 2;
+		position: absolute;
+		
+		i {
+			line-height: 32px;
+			float: left;
+			margin: 0 16px;
+		}
+		span {
+			line-height: 32px;
+			font-weight: bold;
+			float: left;
+		}
+		img {
+			position: absolute;
+			right: -32px;
+		}
+	}
+	div.scrollbox {
+		height: calc(100% - 48px);
+		overflow-y: auto;
+		overflow-x: hidden;
+	}
+	div.scrollbox.smaller {
+		height: calc(100% - 48px - 32px);
+		padding-top: 32px;
+	}
+}
+
+div.searchCont {
+	border-left: 8px solid $red;
+	width: calc(43vw - 4px);
+	
+	div.header {
+		input {
+			width: calc(100% - 124px - 48px);
+		}
+	}
+	div.placeholder {
+		color: $darkerlightblue;
+		font-size: 20px;
+		font-weight: bold;
+		text-align: center;
+		margin-top: calc(50vh - 120px);
+		cursor: default;
+	}
+}
+
+div.playlist, div.song {
+	width: 100%;
+	height: 96px;
+	cursor: default;
+	display: block;
+	position: relative;
+	
+	div.thumb {
+		height: 80px;
+		width: 106px;
+		background-color: $red;
+		background-size: cover;
+		margin-top: 8px;
+		margin-left: 8px;
+		margin-right: 8px;
+		position: relative;
+		float: left;
+		
+		span {
+			position: absolute;
+			bottom: 4px;
+			right: 4px;
+			background-color: rgba(#000,0.7);
+			padding: 1px 5px;
+			font-size: 12px;
+			color: rgba($white,0.8);
+			opacity: 0.3;
+		}
+	}
+
+	div.title {
+		float: left;
+		height: 32px;
+		font-weight: bold;
+		line-height: 32px;
+		width: calc(100% - 106px - 8px * 3);
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
+	div.descri {
+		float: left;
+		width: calc(100% - 106px - 8px * 3);
+		overflow: hidden;
+		font-size: 13px;
+		height: 64px;
+		text-overflow: ellipsis;
+	}
+	i {
+		position: absolute;
+		right: 4px;
+		top: 4px;
+		color: $red;
+		opacity: 0;
+		transition: opacity 0.1s;
+		font-size: 16px;
+		font-weight: bold;
+		cursor: pointer;
+	}
+	&:hover i {
+		opacity: 1;
+	}
+}
+div.playlist:hover div.thumb span, div.song:hover div.thumb span {
+	opacity: 1;
+}
+div.playlist.active, div.song.active {
+	background-color: $lightblue;
+}

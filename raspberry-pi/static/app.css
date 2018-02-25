@@ -1,0 +1,64 @@
+.slidecontainer {
+    width: 100%; /* Width of the outside container */
+}
+
+/* The slider itself */
+.slider {
+    -webkit-appearance: none;  /* Override default CSS styles */
+    appearance: none;
+    width: 100%; /* Full-width */
+    height: 1px; /* Specified height */
+    background: unset; /* Grey background */
+	margin-left: -1px;
+    outline: none; /* Remove outline */
+    opacity: 1; /* Set transparency (for mouse-over effects on hover) */
+    -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+    transition: opacity .2s;
+}
+
+@-moz-document url-prefix() {
+	.slider {
+		height: 2.3px;
+	}
+}
+
+/* Mouse-over effects */
+.slider:hover {
+    opacity: 1; /* Fully shown on mouse-over */
+}
+
+/* The slider handle (use webkit (Chrome, Opera, Safari, Edge) and moz (Firefox) to override default look) */ 
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none; /* Override default look */
+    appearance: none;
+    width: 6px; /* Set a specific slider handle width */
+    height: 6px; /* Slider handle height */
+    background: #fff; /* Green background */
+    cursor: pointer; /* Cursor on hover */
+	border-radius: 10px;
+	transition: width 0.2s, height 0.2s;
+}
+
+.slider:hover::-webkit-slider-thumb {
+    width: 16px; /* Set a specific slider handle width */
+    height: 16px
+}
+.slider::-moz-range-track {
+	background: unset;
+	height: 6px;
+}
+.slider::-moz-range-thumb {
+    width: 16px; /* Set a specific slider handle width */
+    height: 16px; /* Slider handle height */
+    background: #fff; /* Green background */
+    cursor: pointer; /* Cursor on hover */
+	border-radius: 10px;
+	transition: width 0.2s, height 0.2s;
+	border: 0px;
+	margin-top: -3px;
+}
+/* this doesn't seem to work somehow */
+.slider:hover::-mox-range-thumb {
+    width: 16px; /* Set a specific slider handle width */
+    height: 16px
+}

@@ -1,0 +1,84 @@
+@font-face {
+font-family: BlackPearl;
+src: url(BlackPearl.ttf);
+}
+
+body {
+  margin: 0px;
+  background-image: url(https://s-media-cache-ak0.pinimg.com/originals/96/29/ea/9629ea84b459c82c839e26e54ee6acc6.jpg);
+  background-size: cover;
+  min-height: 100vh;
+  overflow: hidden;
+  perspective: 1000px;
+}
+
+div.woodBoard {
+  background-image: url(wood_board.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 94.7vh;
+  height: 80vh;
+  position: relative;
+  top: -6vh;
+  box-sizing: border-box;
+  padding-top: 30vh;
+  margin: auto;
+  transform-origin: 50% 0%;
+  transform: rotate(-180deg);
+}
+div.woodBoard.animating {
+  transition: transform 3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+div.woodBoard.fist {
+  cursor: url(fist-128.png), url(fist-64.png), url(fist-32.png), auto;
+}
+div.brush {
+  position:absolute;
+  top: 40vh;
+  background-image: url(brush.png);
+  background-size: contain;
+  width: 80vh;
+  height: 20vh;
+  left: 10vh;
+  color: #fff;
+  line-height: 15vh;
+  font-family: BlackPearl,Arial;
+  font-size: 4vh;
+  text-indent: 20vh;
+}
+div.brush.pineapple {
+  text-indent: 18vh;
+}
+
+div.board {
+  width: calc(39vh + 6px);
+  height: calc(39vh + 6px);
+  display: block;
+  margin: auto;
+}
+div.board div.field {
+  width: calc(13vh);
+  height: calc(13vh);
+  float: left;
+  box-sizing: border-box;
+  border-top: 16px solid #a00;
+  border-left: 16px solid #a00;
+  border-image: url(line4.png) 16;
+  border-image-repeat round stretch;
+}
+div.figure {
+  background-size: contain;
+  width: calc(13vh - 24px);
+  height: calc(13vh - 24px);
+  margin: 0vh;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+div.field[data-column="2"] {
+  border-right: 16px solid #a00;
+  width: calc(13vh + 6px) !important;
+}
+div.field[data-row="2"] {
+  border-bottom: 16px solid #a00;
+  height:  calc(13vh + 6px) !important;
+}
